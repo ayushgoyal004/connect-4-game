@@ -1,0 +1,16 @@
+# Node modules
+node_modules
+/build
+/dist
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS and Editor files
+.DS_Store
+.vscode
+.idea

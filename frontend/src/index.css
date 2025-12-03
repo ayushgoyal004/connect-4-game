@@ -1,0 +1,14 @@
+:root{
+  --cell-size:60px;
+}
+body { font-family: Arial, Helvetica, sans-serif; padding:16px; }
+.controls { display:flex; gap:8px; align-items:center; margin-bottom:8px; }
+.board { display:grid; grid-template-columns: repeat(7, var(--cell-size)); gap:6px; margin-top:12px; }
+.cell { width:var(--cell-size); height:var(--cell-size); border-radius:8px; background:#ddd; display:flex; align-items:center; justify-content:center; font-weight:bold; cursor:pointer; }
+.cell.p1 { background: #f39c12; }
+.cell.p2 { background: #2980b9; color:white; }
+.log { margin-top:12px; white-space:pre-wrap; background:#fafafa; padding:8px; border:1px solid #eee; height:120px; overflow:auto; }
+.leaderboard { margin-top:10px; }
+.info { margin-top:8px; }
+button { padding:8px 12px; }
+input { padding:8px; }
