@@ -3,9 +3,17 @@ require('dotenv').config();
 class Store{
   constructor() {
     const connectionString=process.env.DATABASE_URL;
-    this.pool=new Pool({connectionString});
+    // this.pool=new Pool({connectionString});
+    const poolConfig = { connectionString };
+    if (process.env.NODE_ENV === 'production' || (connectionString && connectionString.includes('supabase.co'))) {
+      poolConfig.ssl = { rejectUnauthorized: false };
+    }
+
+    this.pool = new Pool(poolConfig);
   }
 
+
+  
   async saveGame(game) {
     const q=`
       INSERT INTO games (id, created_at, duration_seconds, player1, player2, winner, moves, analytics)
